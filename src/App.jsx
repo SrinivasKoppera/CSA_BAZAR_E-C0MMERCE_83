@@ -7,6 +7,8 @@ import Home from "./component/Home/Home";
 import Contact from "./component/Contact/Contact";
 import Notfound from "./component/Notfound";
 import Footer from "./component/Footer/footer";
+import Products from "./component/Products/Products";
+import ProductDetails from "./component/Product-details/product-details";
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
       <Header />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/products" element={<About />} />
+
+        <Route exact path="/products" element={<Products />} />
+        <Route exact path="/product/:identifier" element={<ProductDetails />} />
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/*" element={<Notfound />} />
       </Routes>

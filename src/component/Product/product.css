@@ -1,0 +1,24 @@
+.product {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+}
+.img-container {
+  background-color: burlywood;
+  width: 300px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.product-img {
+  width: 280px;
+  height: 300px;
+}
+.description {
+}
