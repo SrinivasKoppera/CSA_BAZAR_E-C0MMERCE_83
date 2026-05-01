@@ -1,14 +1,21 @@
 import "./Home.css";
 import SimpleSlider from "../Slider";
 import Testimonnials from "../Testimonnials";
+import { useSelector, useDispatch } from "react-redux";
+import { incrementCount, decreamentCount } from "../../reducers/cart-reducers";
 
 const Home = () => {
+  const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+
   return (
     <div className="home-wrapper">
       <section className="hero-section full-width">
         <SimpleSlider />
       </section>
-
+      <h1>count : {cart.count}</h1>
+      <button onClick={() => dispatch(incrementCount())}>Increment</button>
+      <button onClick={() => dispatch(decreamentCount())}>Decrement</button>
       <div className="home-container">
         <section className="intro-section">
           <h2 className="highlight-text">

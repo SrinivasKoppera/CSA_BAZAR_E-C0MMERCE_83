@@ -1,11 +1,17 @@
 import "./product.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import CartContext from "../../context/cart-context";
+import TestComponent from "./test-component";
 
 const Product = ({ product }) => {
+  const { cart, addToCart, removeFromCart } = useContext(CartContext);
   // const navigate = useNavigate();
   // const navigateToPDP = (id, state) => {
   //   navigate(`/product/${id}`, { state });
   // };
+
+  console.log("cart", cart);
 
   return (
     <Link
@@ -23,6 +29,7 @@ const Product = ({ product }) => {
         <p className="description">{product.description}</p>
         <p>Price: {product.price}</p>
         <button>Add to Cart</button>
+        <TestComponent />
       </div>
     </Link>
   );
